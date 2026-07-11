@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script type="module">
+      import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
+      import isSatSun from './15f.js';
+
+
+       const today = dayjs();
+// 15a
+// const date = today.add(5,'days');
+
+// console.log(date.format('MMMM D'));
+
+// 15b
+
+// const date = today.add(1,'month');
+
+// console.log(date.format('MMMM D'));
+
+// // 15c
+
+// const lastdate = today.subtract(1,'month');
+// console.log(lastdate.format('MMMM D'));
+
+// // 15d
+
+// console.log(date.format('dddd'));
+
+// 15e
+// export function isWeekend(date){
+//   const today = dayjs();
+//   const ThatDayDate = today.add(date,'days');
+//   const ThatDayDay = ThatDayDate.format('dddd,MMMM D');
+//   if(ThatDayDay === 'Sunday' || ThatDayDay === 'Saturday'){
+//     console.log('Weekend Day :)',ThatDayDay);
+//   }else{
+//     console.log('No Weekend :(',ThatDayDay);
+//   }
+// };
+
+isSatSun(9);
+    </script>
+  </body>
+</html>
