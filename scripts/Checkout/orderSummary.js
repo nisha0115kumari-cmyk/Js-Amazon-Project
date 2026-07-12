@@ -5,6 +5,7 @@ import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import {deliveryOptions,getDeliveryOption} from '../../data/deliveryOptions.js';
 import {renderPaymentSummary} from './paymentSummary.js';
+import {renderCheckoutHeader} from './CheckoutHeader.js';
 
 
 export function renderOrderSummary(){
@@ -121,11 +122,11 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
         const productId =  link.dataset.productId;
         removeFromCart(productId);
 
-        const container = document.querySelector(`.js-cart-item-container-${productId}`);
-        container.remove();
-
          updateCartQuantity();
+        renderCheckoutHeader();
+        renderOrderSummary();
          renderPaymentSummary();
+         
     });
 });
 
