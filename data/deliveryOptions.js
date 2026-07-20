@@ -26,6 +26,17 @@ export function getDeliveryOption(deliveryOptionId){
 
 }
 
+export function validDeliveryOption(deliveryOptionId){
+    const found = false;
+    deliveryOptions.forEach((option) => {
+        if(option.id === deliveryOptionId){
+        deliveryOption = option;
+        found = true;
+        }
+    });
+    return found;
+}
+
 
 function isWeekend(date) {
   const dayOfWeek = date.format('dddd');
