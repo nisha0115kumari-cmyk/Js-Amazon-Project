@@ -27,10 +27,9 @@ export function getDeliveryOption(deliveryOptionId){
 }
 
 export function validDeliveryOption(deliveryOptionId){
-    const found = false;
+    let found = false;
     deliveryOptions.forEach((option) => {
         if(option.id === deliveryOptionId){
-        deliveryOption = option;
         found = true;
         }
     });
