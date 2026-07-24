@@ -56,30 +56,6 @@ export class Clothing extends Product {
     `;
   }
 }
-
-export class Appliance extends Product {
-  instructionsLink;
-  warrantyLink;
-
-  constructor(productDetails){
-      super(productDetails);
-
-      this.instructionsLink = productDetails.instructionsLink;
-      this.warrantyLink = productDetails.warrantyLink;
-  }
-
-  extraInfoHTML() {
-    return `
-    <a 
-    href="${this.instructionsLink}" target="_blank">Instructions
-    </a>
-
-    <a 
-    href="${this.warrantyLink}" target="_blank">Warranty
-    </a>
-    `;
-  }
-}
 /*
 const date = new Date();
 console.log(date);
@@ -122,9 +98,6 @@ export function loadProductsFetch() {
         if(productDetails.type === 'clothing'){
           return new Clothing(productDetails);
         }
-        else if(productDetails.type === 'Appliance'){
-          return new Appliance(productDetails);
-        }
         return new Product(productDetails);
           });
           console.log('load products');
@@ -150,9 +123,6 @@ export function loadProducts(fun){
     products = JSON.parse(xhr.response).map((productDetails) =>{
   if(productDetails.type === 'clothing'){
     return new Clothing(productDetails);
-  }
-  else if(productDetails.type === 'Appliance'){
-  return new Appliance(productDetails);
   }
   return new Product(productDetails);
     });

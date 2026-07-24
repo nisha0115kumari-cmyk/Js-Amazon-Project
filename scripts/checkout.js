@@ -10,7 +10,7 @@ import '../../data/car.js';
 async function loadPage() {
   try{
     //throw 'error1';
-  await Promise.all()([  
+  await Promise.all([  
   loadProductsFetch(),
   loadCartFetch()
   ]);
